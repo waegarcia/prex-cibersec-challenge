@@ -65,6 +65,8 @@ prex-cybersec-challenge/
 
 3. **Verificación**:
    Acceda a http://localhost:5000/health para comprobar que la API está funcionando correctamente.
+   
+   Para ver la API de ejemplo en AWS: http://52.14.229.100:5000/health
 
 ### Agente Portable (Clientes)
 
@@ -103,10 +105,22 @@ El agente acepta varios parámetros de línea de comandos:
 
 Ejemplo:
 ```bash
-python system_info_agent.py --url http://mi-api.ejemplo.com:5000 --interval 300
+python system_info_agent.py --url http://52.14.229.100:5000 --interval 300
 ```
 
 ## Despliegue en AWS EC2
+
+### API Desplegada
+
+La API ya está desplegada en una instancia EC2 de AWS y está accesible en:
+
+- **URL**: http://52.14.229.100:5000
+- **Estado**: http://52.14.229.100:5000/health
+- **Servidores monitoreados**: http://52.14.229.100:5000/servers
+
+Puede probar el agente portable configurado para enviar datos a esta API de ejemplo.
+
+### Instrucciones para su propio despliegue
 
 1. Inicie una instancia EC2 con su AMI preferida
 
@@ -120,13 +134,13 @@ python system_info_agent.py --url http://mi-api.ejemplo.com:5000 --interval 300
 
 3. Copie el código de la API:
    ```bash
-   git clone git@github.com:waegarcia/prex-cibersec-challenge.git
+   git clone https://github.com/waegarcia/prex-cibersec-challenge.git
    # O suba manualmente la carpeta api
    ```
 
 4. Configure las variables de entorno:
    ```bash
-   cd prex-cybersec-challenge/api
+   cd prex-cibersec-challenge/api
    cp .env.example .env
    # Edite el archivo .env con sus credenciales seguras
    nano .env
@@ -153,7 +167,7 @@ Para modificar la URL de la API a la que el agente envía los datos:
 2. Edite el valor de la variable `API_URL` al inicio del archivo:
    ```python
    # URL de la API de recolección
-   API_URL = "http://tu-nueva-url:5000"
+   API_URL = "http://52.14.229.100:5000"  # Instancia EC2 de ejemplo
    ```
 
 Para configurar la clave API para autenticación:
