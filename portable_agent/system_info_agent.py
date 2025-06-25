@@ -16,7 +16,7 @@ import subprocess
 import platform
 
 # URL de la API de recolección
-API_URL = "http://localhost:5000"
+API_URL = "http://52.14.229.100:5000"
 
 # Clave para autenticación con la API
 API_SECRET = "8VarhXGAwTAlR7QV0UXhG3fZHWkB3O7h"
