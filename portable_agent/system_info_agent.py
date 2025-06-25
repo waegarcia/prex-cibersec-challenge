@@ -118,7 +118,7 @@ class SystemInfoAgent:
                 "username": user.name,
                 "terminal": user.terminal,
                 "host": user.host,
-                "started": datetime.datetime.fromtimestamp(user.started, tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+                "started": datetime.fromtimestamp(user.started, tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
             })
         return users
     
