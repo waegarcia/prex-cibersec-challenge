@@ -33,11 +33,15 @@ El agente recolecta:
 
 1. Copie la carpeta `portable_agent` al servidor destino
 2. Ejecute PowerShell como administrador
-3. Permita la ejecución de scripts si es necesario:
+3. Navegue al directorio del agente:
+   ```powershell
+   cd ruta\a\portable_agent
+   ```
+4. Permita la ejecución de scripts si es necesario:
    ```powershell
    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
    ```
-4. Ejecute el script de instalación:
+5. Ejecute el script de instalación:
    ```powershell
    .\install_and_run.ps1
    ```
@@ -45,11 +49,15 @@ El agente recolecta:
 ### En Linux
 
 1. Copie la carpeta `portable_agent` al servidor destino
-2. Otorgue permisos de ejecución:
+2. Navegue al directorio del agente:
+   ```bash
+   cd ruta/a/portable_agent
+   ```
+3. Otorgue permisos de ejecución:
    ```bash
    chmod +x install_and_run.sh
    ```
-3. Ejecute el script de instalación:
+4. Ejecute el script de instalación:
    ```bash
    ./install_and_run.sh
    ```
